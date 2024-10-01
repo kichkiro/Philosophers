@@ -1,4 +1,4 @@
-<img src="https://github.com/kichkiro/42_cursus/blob/assets/banner_philosophers.png?raw=true" width="100%"/>
+![Banner](https://github.com/kichkiro/42/blob/assets/banner_philosophers.jpeg?raw=true)
 
 # Philosophers
 
@@ -33,11 +33,15 @@
 
 #### <i>[subject](_subject/en.subject.pdf) v.10</i>
 
-## 🌳 - Project tree
+<details>
+<summary><i><b>Project Structure  📂</b></i></summary>
 
 ``` js
 .
 ├── README.md
+├── LICENSE
+├── Dockerfile
+├── .gitmodules
 ├── _subject
 │   └── en.subject.pdf
 ├── _tester
@@ -69,12 +73,61 @@
 
 ```
 
-## 🛠️ - How to use? 
+</details>
+
+## 📌 - Key Topics
+
+### Concurrency Programming
+Concurrency programming is a paradigm that enables multiple threads or processes to execute independently, allowing for efficient resource utilization and improved performance in computational tasks. 
+
+In the context of this project, the implementation of concurrency involves managing the interactions between philosophers as they simulate the dining experience, which includes eating, sleeping, and thinking. 
+
+The design necessitates the careful orchestration of threads or processes to prevent data races and ensure synchronization when accessing shared resources, such as forks. 
+
+Through the use of mutexes or semaphores, concurrency programming facilitates safe access to critical sections of code, thus maintaining the integrity of the simulation while allowing for multiple philosophers to operate in parallel.
+
+## 🛠️ - Usage
 
 ``` sh
 git clone --recurse-submodules https://github.com/kichkiro/Philosophers.git
-cd Philosophers/project/
-make
+cd Philosophers/
+docker build -t philosophers:42 .
+docker run -d --rm --name philosophers philosophers:42
+```
+Now it is possible to enter in the container and launch the program, four arguments are required and one optional:
+- number_of_philosophers
+- time_to_die (in milliseconds)
+- time_to_eat (in milliseconds)
+- time_to_sleep (in milliseconds)
+- number_of_times_each_philosopher_must_eat (optional argument)
+
+for example:
+
+```sh
+docker exec -it philosophers bash
+
+./philo_bonus 1, 120, 60, 60, 5
+    [1727781044614] 1 has taken a fork 🍴
+    [1727781044675] 1 died 💀
+
+./philo_bonus 4, 310, 200, 100, 2
+    [1727781331513] 2 has taken a fork 🍴
+    [1727781331513] 2 has taken a fork 🍴
+    [1727781331513] 2 is eating 🍝
+    [1727781331517] 4 has taken a fork 🍴
+    [1727781331517] 4 has taken a fork 🍴
+    [1727781331517] 4 is eating 🍝
+    [1727781331713] 2 is sleeping 💤
+    [1727781331713] 3 has taken a fork 🍴
+    [1727781331714] 1 has taken a fork 🍴
+    [1727781331717] 4 is sleeping 💤
+    [1727781331717] 1 has taken a fork 🍴
+    [1727781331717] 1 is eating 🍝
+    [1727781331717] 3 has taken a fork 🍴
+    [1727781331717] 3 is eating 🍝
+    [1727781331814] 2 is thinking 🤔
+    [1727781331817] 4 is thinking 🤔
+    [1727781331824] 2 died 💀
 ```
 
 ## 📈 - Tester
@@ -105,4 +158,4 @@ Check [philosophers_tester](https://github.com/kichkiro/philosophers_tester), th
 
 ## ⚖️ - License 
 
-See [LICENSE](https://github.com/kichkiro/42_cursus/blob/main/LICENSE)
+See [LICENSE](LICENSE)
