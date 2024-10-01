@@ -1,4 +1,4 @@
-![Banner](https://github.com/kichkiro/42/blob/assets/banner_philosophers.jpeg?raw=true)
+<img src="https://github.com/kichkiro/42/blob/assets/banner_philosophers.jpeg?raw=true" width="100%"/>
 
 # Philosophers
 
