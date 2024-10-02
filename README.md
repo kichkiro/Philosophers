@@ -37,7 +37,6 @@
 <summary><i><b>Project Structure  📂</b></i></summary>
 
 ``` js
-.
 ├── README.md
 ├── LICENSE
 ├── Dockerfile
