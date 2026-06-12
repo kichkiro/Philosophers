@@ -1,4 +1,4 @@
-<img src="https://github.com/kichkiro/kichkiro/blob/main/assets/banner_philosophers.jpeg?raw=true" width="100%"/>
+<img src="https://github.com/kichkiro/kichkiro/blob/main/assets/banners/banner_philosophers.jpeg?raw=true" width="100%"/>
 
 # Philosophers
 
@@ -131,7 +131,7 @@ docker exec -it philosophers bash
 
 ## 📈 - Tester
 
-<img src="https://github.com/kichkiro/kichkiro/blob/main/assets/banner_philosophers_tester.png?raw=true" width="100%"/>
+<img src="https://github.com/kichkiro/kichkiro/blob/main/assets/banners/banner_philosophers_tester.png?raw=true" width="100%"/>
 
 Check [philosophers_tester](https://github.com/kichkiro/philosophers_tester), this is my own tester, and it runs the following tests:
 - make:
